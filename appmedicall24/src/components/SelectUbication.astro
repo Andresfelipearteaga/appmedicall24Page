@@ -1,0 +1,33 @@
+---
+interface Props {
+	label: string;
+}
+
+const { label } = Astro.props;
+
+
+---
+
+
+<div class="relative w-full max-w-md">
+    <select
+        class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300 appearance-none block w-80 h-8 bg-transparent border border-white text-white text-center rounded-md focus:outline-none focus:ring-2 focus:ring-white-500 focus:border-white-500 font-light text-lg p-0 pr-10" style="text-indent: 35px"
+
+    >
+        <option value="opcion1" disabled selected style="color: rgb(199, 199, 199);">{label}</option>
+        <option value="opcion2">Colombia</option>
+        <option value="opcion3">Panamá</option>
+        <option value="opcion4">Estados Unidos</option>
+    </select>
+</div>
+
+<style>
+    select:focus {
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    option {
+        background-color: rgb(255, 255, 255);
+        color: rgb(90, 90, 90);
+    }
+</style>

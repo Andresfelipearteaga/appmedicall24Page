@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+// import logo from '../assets/logo.png';
+import mano from '../assets/mano.png';
+import InfoPlan from '../components/InfoPlan.astro';
+import icoLogo from '../assets/icoLogo.svg'
+import seguro from '../assets/seguro.png';
+---
+
+<Layout title="Medicall24">
+    <Header />
+
+	<main>
+        <section class="flex flex-col items-center justify-center">
+            <InfoPlan />
+        </section>
+        <section class="flex flex-col items-center justify-center mt-20 bg-white">
+            <div class="mt-20  mb-20 sm:px-10">
+                <img src={seguro.src} alt="mano" class="hidden lg:block absolute right-20 top-30 w-80"
+                />
+                <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl">Incluye</p>
+                <p class="font-extrabold text-orange-500 text-4xl mb-2 sm:text-2xl">Seguro de vida</p>
+                
+                <div class="mb-8">
+                    <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl" style="text-indent: 25px">Amparos:</p>
+        
+                    <!-- Amparo 1: Muerte por cualquier causa -->
+                    <div class="flex items-center" style="text-indent: 25px">
+                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                        <p>Muerte por cualquier causa</p>
+                    </div>
+        
+                    <!-- Amparo 2: Incapacidad total y permanente por enfermedad o accidente -->
+                    <div class="flex items-center" style="text-indent: 25px">
+                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                        <p >Incapacidad total y permanente por enfermedad o accidente</p>
+                    </div>
+        
+                    <!-- Amparo 3: Enfermedades graves -->
+                    <div class="flex items-center" style="text-indent: 25px">
+                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                        <p>Enfermedades graves</p>
+                    </div>
+                </div>
+
+                <p class="font-extrabold text-orange-500 text-4xl mb-2 sm:text-2xl">Póliza de accidentes personales</p>
+        
+                <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl" style="text-indent: 25px">Amparos:</p>
+        
+                <!-- Amparo 4: Muerte accidental -->
+                <div class="flex items-center" style="text-indent: 25px">
+                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                    <p>Muerte accidental</p>
+                </div>
+        
+                <!-- Amparo 5: Invalidez accidental y/o desmembración -->
+                <div class="flex items-center" style="text-indent: 25px">
+                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                    <p>Invalidez accidental y/o desmembración</p>
+                </div>
+        
+                <!-- Amparo 6: Auxilio funerario -->
+                <div class="flex items-center" style="text-indent: 25px">
+                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
+                    <p>Auxilio funerario</p>
+                </div>
+         
+
+            </div>
+
+        </section>
+        
+	</main>
+</Layout>
+
+<style>
+    html {
+        background: rgb(238, 238, 238);
+    }
+</style>

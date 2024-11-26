@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SelectUbication from '../components/SelectUbication.astro';
+import SelectUserType from '../components/SelectUserType';
+import RedirectButtom from '../components/RedirectButtom.astro';
+import logo from '../assets/logo.png';
+import mano from '../assets/mano.png';
+---
+
+<Layout title="Bienvenidos a Medicall24">
+	<main class="flex items-center justify-center min-h-screen">
+
+		<!-- Logo y Select centrados -->
+		<div class="flex flex-col items-center z-10">
+					<!-- Mano posicionada de forma absoluta -->
+				<!-- <img
+				src={mano.src}
+				alt="Mano"
+				class=":block sm:w-80 sm:mb-20 hidden"
+			/> -->
+			<!-- Logo -->
+			<img
+				src={logo.src}
+				alt="Logo"
+				class="w-72 h-auto"
+			/>
+			<div class="mt-6">
+				<div class="grid grid-cols-2 gap-6 items-center sm:grid-cols-1 mb-6">
+					<div class="mt-6">
+						<!-- <SelectUbication label="Estoy en Colombia" /> -->
+						<RedirectButtom label="Estoy en Colombia" link="/planes"/>
+
+					</div>
+					
+					<div class="mt-6">
+						<!-- <SelectUbication label="Estoy en Panamá" /> -->
+						<RedirectButtom label="Estoy en Panamá" link='#'/>
+					</div>
+				  </div>
+				  <div class="grid grid-cols-2 gap-6 sm:grid-cols-1" >
+					<div class="mt-6">
+						<!-- <SelectUbication  label="Estoy en Estados Unidos" /> -->
+						<RedirectButtom label="Estoy en Estados Unidos" link='#' />
+					</div>
+					
+					<div class="mt-6">
+						<!-- <SelectUbication  label="Estoy en otro país" /> -->					<RedirectButtom label="Estoy en otro país" link='#' />
+
+					</div>
+				  </div>			
+				</div>
+
+
+			<!-- Select -->
+
+
+						<!-- Select -->
+						<!-- <div class="mt-6">
+							<SelectUserType />
+						</div> -->
+
+				
+
+		</div>
+
+		<!-- Mano posicionada de forma absoluta -->
+		<!-- <img
+			src={mano.src}
+			alt="Mano"
+			class="hidden md:block absolute right-20 w-96"
+		/> -->
+	</main>
+</Layout>
+
+<style>
+</style>
