@@ -1,0 +1,134 @@
+  <main class="flex flex-col w-full items-center mt-8 mb-36">
+
+ <img src={logomedicall.src} alt="Logo" class="w-40 h-auto animate-slide-in hidden md:block" />
+    <div class="flex flex-col items-center justify-center animate-slide-in ml-56 mt-20 md:hidden ">
+        <div class="flex flex-col items-center justify-center h-auto z-10">
+            <!-- Título principal -->
+            <h1 class="text-6xl md:text-5xl font-bold text-black text-center">
+              <span class="text-gray-600 font-bold">Plan de</span> <span class="text-pink-700 font-bold">Telemedicina</span>  
+            </h1>
+          
+            <!-- Subtítulo -->
+            <div class="flex items-center mt-4 space-x-5 text-center">
+              <span class="text-3xl md:text-3xl font-bold text-gray-600">Desde</span>
+              <span class="text-9xl md:text-6xl font-extrabold text-orange-500 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:ml-4">$7.990</span>
+              <span class="text-3xl md:text-4xl font-bold text-gray-600">COP</span>
+            </div>
+            
+            <!-- Texto de descripción -->
+            <span class="mt-4 text-3xl md:text-xl font-bold bg-pink-600 px-4 py-2 rounded-lg text-white ">
+              Valor promedio por usuario al mes
+            </span>
+          </div>
+          <img src={senda.src} alt="Mano" class="w-10/12 h-auto absolute top-72 animate-slide-in" />
+
+        </div>
+
+
+    <img src={mano2.src} alt="mano" class="hidden md:block w-60 animate-float-right mt-10" style="pointer-events: none; user-select: none;" />
+
+    <!-- <img src={cam.src} alt="Cam" class="w-24 h-auto" /> -->
+     <img src={planes.src} alt="image" class="w-5/12 hidden md:block w-96 mb-0">
+  
+    <p class="text-center text-gray-600 font-extrabold text-2xl mt-0 hidden md:block">Consultas ilimitadas</p>
+    <p class="text-center text-gray-600 text-xl hidden md:block">con médicos generales</p>
+    <p class="text-center text-gray-600 text-xl mb-5 hidden md:block">y especialistas</p>
+
+    <p class="text-center text-gray-600 font-bold text-2xl hidden md:block">Desde</p>
+    <div class="flex flex-row items-end mb-2 hidden md:block">
+        <p class="text-center text-pink-700 font-extrabold text-4xl md:text-6xl mr-2">$4.990</p> 
+        <p class="text-pink-700 text-center font-bold text-2xl">COP</p>
+    </div>
+    <img src={mes.src} alt="mes" class="w-72 h-auto mb-8 hidden md:block" />
+  
+    <img src={mano2.src} alt="mano" class="hidden lg:block xl:block 2xl:block absolute left-24 w-80 animate-float-left " style="pointer-events: none; user-select: none;" />
+
+</main> 
+
+
+
+
+
+
+
+
+
+
+
+---
+import Layout from '../layouts/MainLayout.astro'; // Si tienes un layout general
+---
+
+<Layout>
+  <!-- Sección 1 -->
+  <section class="py-12 px-4 md:px-12">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+      <div class="w-full md:w-1/2">
+        <img src="/path-to-image1.jpg" alt="Imagen 1" class="w-full h-auto" />
+      </div>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Título de la Sección 1</h2>
+        <p class="text-lg">Texto descriptivo de la primera sección. Aquí puedes agregar más contenido que explique lo que haces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 2 -->
+  <section class="py-12 px-4 md:px-12 bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+      <div class="w-full md:w-1/2">
+        <img src="/path-to-image2.jpg" alt="Imagen 2" class="w-full h-auto" />
+      </div>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Título de la Sección 2</h2>
+        <p class="text-lg">Texto descriptivo de la segunda sección. Explicando más detalles sobre lo que ofreces.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 3 -->
+  <section class="py-12 px-4 md:px-12">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+      <div class="w-full md:w-1/2">
+        <img src="/path-to-image3.jpg" alt="Imagen 3" class="w-full h-auto" />
+      </div>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Título de la Sección 3</h2>
+        <p class="text-lg">Aquí puedes colocar más contenido para tu landing. Asegúrate de conectar con el usuario y presentarles algo interesante.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección 4 -->
+  <section class="py-12 px-4 md:px-12 bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+      <div class="w-full md:w-1/2">
+        <img src="/path-to-image4.jpg" alt="Imagen 4" class="w-full h-auto" />
+      </div>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-4">Título de la Sección 4</h2>
+        <p class="text-lg">Una sección final para cerrar la experiencia. ¡Invita a los usuarios a hacer una acción!</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+
+
+---
+import ButtomModal from "./ButtomModal.astro"
+import Table from "../../react/planesPage/Table.jsx"
+---
+
+<!-- You can open the modal using ID.showModal() method -->
+<a class="flex items-center justify-center w-full ml-8" onclick="my_modal_3.showModal()">
+  <ButtomModal label="Cotizar" className="plan-btn" />
+</a>
+<dialog id="my_modal_3" class="modal rounded-lg p-6">
+  <form method="dialog">
+    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+  </form> 
+  <div class="modal-box">
+      <Table client:load />
+  </div>
+</dialog>

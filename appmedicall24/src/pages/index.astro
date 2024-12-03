@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SelectUbication from '../components/SelectUbication.astro';
-import SelectUserType from '../components/SelectUserType';
-import RedirectButtom from '../components/RedirectButtom.astro';
-import logo from '../assets/logo.png';
-import mano from '../assets/mano.png';
+import RedirectButtom from '../components/react/indexPage/RedirectButtom';
+import logo from '../assets/logomedicall.png';
+import middle from '../assets/mediologo.png';
 ---
 
 <Layout title="Bienvenidos a Medicall24">
-	<main class="flex items-center justify-center min-h-screen">
+	<main class="flex items-center justify-center min-h-screen relative overflow-hidden">
+		<img src={middle.src} alt="Mano" class="w-72 h-auto absolute right-0 top-0 animate-slide-in" />
 
 		<!-- Logo y Select centrados -->
 		<div class="flex flex-col items-center z-10">
@@ -22,29 +21,38 @@ import mano from '../assets/mano.png';
 			<img
 				src={logo.src}
 				alt="Logo"
-				class="w-72 h-auto"
+				class="w-60 h-auto animate-in"
 			/>
-			<div class="mt-6">
-				<div class="grid grid-cols-2 gap-6 items-center sm:grid-cols-1 mb-6">
+
+			<div>
+				<h1 class="text-ls text-center text-gray-400 mt-2 animate-text mr-1">
+					Telemedicina al alcance de todos
+				</h1>
+			</div>
+
+			<div>
+				<h1 class="text-3xl text-center font-bold text-gray-600 mt-6 animate-text">
+				¿Dónde te encuentras?
+				</h1>
+			</div>
+			<div class="mt-6 animate-text">
+				<div class="grid grid-cols-2 gap-6 items-center sm:grid-cols-1 mb-6 ">
 					<div class="mt-6">
-						<!-- <SelectUbication label="Estoy en Colombia" /> -->
-						<RedirectButtom label="Estoy en Colombia" link="/planes"/>
+						<RedirectButtom client:load label="Colombia" link="/inicio/" customClass="border-orange-500 text-orange-500 hover:text-white hover:bg-orange-500 w-80"/>
 
 					</div>
 					
 					<div class="mt-6">
-						<!-- <SelectUbication label="Estoy en Panamá" /> -->
-						<RedirectButtom label="Estoy en Panamá" link='#'/>
+						<RedirectButtom client:load label="Panamá" link='#' customClass="border-gray-500 text-gray-500 w-80"/>
 					</div>
 				  </div>
 				  <div class="grid grid-cols-2 gap-6 sm:grid-cols-1" >
 					<div class="mt-6">
-						<!-- <SelectUbication  label="Estoy en Estados Unidos" /> -->
-						<RedirectButtom label="Estoy en Estados Unidos" link='#' />
+						<RedirectButtom client:load label="EE.UU." link='#' customClass="border-gray-500 text-gray-500 w-80"/>
 					</div>
 					
 					<div class="mt-6">
-						<!-- <SelectUbication  label="Estoy en otro país" /> -->					<RedirectButtom label="Estoy en otro país" link='#' />
+							<RedirectButtom client:load label="Otros Países" link='#' customClass="border-gray-500 text-gray-500 w-80"/>
 
 					</div>
 				  </div>			
@@ -73,4 +81,50 @@ import mano from '../assets/mano.png';
 </Layout>
 
 <style>
+.animate-slide-in {
+  animation: slide-in 1s ease-out;
+}
+
+.animate-in {
+  animation: in 1s ease-out;
+}
+
+.animate-text {
+  animation: text 1s ease-out;
+}
+
+@keyframes text {
+  0% {
+	opacity: 0;
+  }
+  100% {
+	opacity: 1;
+  }
+}
+
+@keyframes in {
+  0% {
+	opacity: 0;
+
+  }
+  100% {
+	opacity: 1;
+
+  }
+}
+
+@keyframes slide-in {
+	0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 </style>

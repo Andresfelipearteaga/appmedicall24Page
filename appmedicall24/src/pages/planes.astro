@@ -1,81 +1,78 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-// import logo from '../assets/logo.png';
-import mano from '../assets/mano.png';
-import InfoPlan from '../components/InfoPlan.astro';
-import icoLogo from '../assets/icoLogo.svg'
-import seguro from '../assets/seguro.png';
+import Layout from "../layouts/layoutGeneral.astro";
+import InfoPlan from "../components/astro/planesPage/InfoPlan.astro";
+import GetPlan from "../components/astro/planesPage/getPlan.astro";
+import ViewIndex from "../components/astro/planesPage/ViewIndex.astro";
+import InfoText from "../components/astro/planesPage/InfoText.astro";
+import HeaderPlan from "../components/astro/planesPage/HeaderPlanes.astro";
+import Simulated from "../components/astro/planesPage/Simulated.astro";
 ---
 
-<Layout title="Medicall24">
-    <Header />
+<main>
+  <Layout title="Medicall241">
+    <HeaderPlan />
+    <section
+      class="bg-gradient-to-r from-pink-700 to-pink-500 py-16 px-48 md:px-12"
+    >
+    
+      <ViewIndex />
+    </section>
 
-	<main>
-        <section class="flex flex-col items-center justify-center">
-            <InfoPlan />
-        </section>
-        <section class="flex flex-col items-center justify-center mt-20 bg-white">
-            <div class="mt-20  mb-20 sm:px-10">
-                <img src={seguro.src} alt="mano" class="hidden lg:block absolute right-20 top-30 w-80"
-                />
-                <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl">Incluye</p>
-                <p class="font-extrabold text-orange-500 text-4xl mb-2 sm:text-2xl">Seguro de vida</p>
-                
-                <div class="mb-8">
-                    <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl" style="text-indent: 25px">Amparos:</p>
-        
-                    <!-- Amparo 1: Muerte por cualquier causa -->
-                    <div class="flex items-center" style="text-indent: 25px">
-                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                        <p>Muerte por cualquier causa</p>
-                    </div>
-        
-                    <!-- Amparo 2: Incapacidad total y permanente por enfermedad o accidente -->
-                    <div class="flex items-center" style="text-indent: 25px">
-                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                        <p >Incapacidad total y permanente por enfermedad o accidente</p>
-                    </div>
-        
-                    <!-- Amparo 3: Enfermedades graves -->
-                    <div class="flex items-center" style="text-indent: 25px">
-                        <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                        <p>Enfermedades graves</p>
-                    </div>
-                </div>
-
-                <p class="font-extrabold text-orange-500 text-4xl mb-2 sm:text-2xl">Póliza de accidentes personales</p>
-        
-                <p class="font-extrabold text-pink-600 text-3xl mb-4 sm:text-xl" style="text-indent: 25px">Amparos:</p>
-        
-                <!-- Amparo 4: Muerte accidental -->
-                <div class="flex items-center" style="text-indent: 25px">
-                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                    <p>Muerte accidental</p>
-                </div>
-        
-                <!-- Amparo 5: Invalidez accidental y/o desmembración -->
-                <div class="flex items-center" style="text-indent: 25px">
-                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                    <p>Invalidez accidental y/o desmembración</p>
-                </div>
-        
-                <!-- Amparo 6: Auxilio funerario -->
-                <div class="flex items-center" style="text-indent: 25px">
-                    <img src={icoLogo.src} alt="imagen" class="w-4 h-6" />
-                    <p>Auxilio funerario</p>
-                </div>
-         
-
-            </div>
-
-        </section>
-        
-	</main>
-</Layout>
+    <section class="py-12 px-48 md:px-12">
+        <div
+        id="hidden-section-1"
+        class="mt-6 mb-6 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+        <div class="p-4 bg-white">
+            <Simulated />
+        </div>
+      </div>
+      <InfoText />
+    </section>
+    <section class="py-12 px-48 md:px-12">
+      <InfoPlan />
+    </section>
+    <section class="py-12 px-48 md:px-12">
+        <GetPlan />
+    </section>
+  </Layout>
+</main>
 
 <style>
-    html {
-        background: rgb(238, 238, 238);
+  .animate-slide-in {
+    animation: slide-in 1s ease-out;
+  }
+
+  .animate-float-left {
+    animation: float-left 3s ease-in-out infinite;
+  }
+
+  @keyframes float-left {
+    0%,
+    100% {
+      transform: translateY(0);
     }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(
+        100%
+      ); /* Empuja el contenido hacia abajo inicialmente */
+    }
+    100% {
+      transform: translateY(0); /* El contenido vuelve a su posición original */
+    }
+  }
 </style>

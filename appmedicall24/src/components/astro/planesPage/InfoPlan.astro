@@ -1,0 +1,114 @@
+---
+import icon from '../../../assets/camitem.png';
+import paciente from '../../../assets/paciente.webp';
+import Simulated from './Simulated.astro';
+import ButtonModal from './ButtomModal.astro';
+
+const title1 = "Consultas";
+const title2 = "Ilimitadas";
+
+
+const items = [
+  { icon: "user-md", text: "Medicina General" },
+  { icon: "user-md", text: "Psicología" },
+  { icon: "user-md", text: "Pediatría" },
+];
+---
+
+
+<div class="container mx-auto flex flex-row md:flex-row items-center justify-center gap-8">
+  <div class="w-6/12 md:w-1/2 rounded-3xl overflow-hidden">
+    <img src={paciente.src} alt="image" class="w-full h-auto transition-transform transform scale-100 hover:scale-110 hover:rotate-1 hover:translate-y-[-5px] duration-300" />
+  </div>
+  <div class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center items-center">
+    <div class="text-center items-center mb-4">
+      <span class="text-4xl font-bold text-gray-600">{title1}</span> 
+      <span class="text-4xl font-extrabold text-pink-600">{title2}</span>
+
+      <ul class="flex gap-14 mt-8 mb-8 items-center justify-center">
+        {items.map(item => (
+          <li class="flex flex-row items-center">
+            <!-- Ícono -->
+            <div class="rounded-full flex items-center justify-center w-7 h-auto">
+              <img src={icon.src} alt="Descripción" class="w-full h-auto" />
+            </div>
+            <!-- Texto -->
+            <p class="ml-2 text-base text-gray-700 font-bold">{item.text }</p>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+
+      <div class="w-10/12 rounded-lg overflow-hidden mb-12">
+        <table class="w-full bg-white">
+          <thead class="bg-orange-500 text-white">
+            <tr>
+              <th class="px-4 py-3 text-center font-bold text-base">Precio del Plan de Telemedicina para el usuario tomador</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50 bg-gray-100 transition-colors duration-200">
+                <th class="px-4 py-3 text-base text-center font-bold text-gray-600"><span class="text-sm font-bold text-pink-600">Desde</span> $19,960 COP</th>
+              </tr>
+          </tbody>
+        </table>
+    
+      </div>
+
+      <div class="w-10/12 rounded-lg overflow-hidden">
+        <p class="text-center text-base font-bold mb-4 text-gray-700 mb-4">El tomador del plan puede registrar 3 usuarios adicionales accediendo a tarifas preferenciales</p> 
+        <table class="w-full border-collapse bg-white shadow-lg">
+            <!-- Cuerpo -->
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-gray-100 hover:bg-gray-50 transition-colors duration-200">
+                <td class="px-4 border-r border-gray-200 py-3 text-base text-center font-regular text-gray-700">
+                  Segundo Usuario
+                </td>
+                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
+                    <span class="text-sm font-bold text-pink-600">Desde</span> $6,000 COP
+                </td>
+                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
+                  Descuento del <span class="font-bold">70%</span>
+                </td>
+              </tr>
+              <tr class="transition-colors duration-200">
+                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-regular text-gray-700">
+                Tercer Usuario
+                </td>
+                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
+                    <span class="text-sm font-bold text-pink-600">Desde</span> $4,000 COP
+
+                </td>
+                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
+                    Descuento del <span class="font-bold">80%</span>
+                </td>
+              </tr>
+              <tr class="bg-gray-100 hover:bg-gray-50 transition-colors duration-200">
+                <td class="px-4 border-r border-gray-200 py-3 text-base text-center font-regular text-gray-700">
+                Cuarto Usuario
+                </td>
+                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
+                    <span class="text-sm font-bold text-pink-600">Desde</span> $2,000 COP
+                </td>
+                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
+                Descuento del <span class="font-bold">90%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <ButtonModal label="Simular" className="w-auto" dataTarget="hidden-section-2" />
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div
+id="hidden-section-2"
+class="mt-6 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+<div class="p-4">
+  <Simulated />
+</div>
+</div>
+

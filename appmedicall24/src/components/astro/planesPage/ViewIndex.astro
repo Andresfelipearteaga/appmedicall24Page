@@ -1,0 +1,92 @@
+---
+// imagen
+import image from '../../../assets/medicoparafonda.png';
+
+//componentes
+import ButtomModal from '../planesPage/ButtomModal.astro';
+---
+
+<main>
+  <div class="container mx-auto flex flex-row md:flex-row items-center justify-center gap-8 ">
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <div class="flex flex-col justify-center text-left animate-slide-down opacity-0">
+        <!-- Título -->
+        <h1 class="text-white text-4xl md:text-5xl font-bold mb-8 animate-fade-in">
+          Planes de Telemedicina para Empresas
+        </h1>
+        <!-- Descripción -->
+        <p class="text-white text-xl mb-2 delay-200">
+        Valor promedio por usuario al mes
+        </p>
+        <p class="text-white text-5xl">Desde <span class="font-bold">$7.990 COP</span></p>
+        </p>
+        <!-- Botones -->
+        <div class="flex flex-wrap gap-4 opacity-0 animate-slide-up delay-400">
+          <ButtomModal label="Simular" className="w-auto" dataTarget="hidden-section-1" />
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2">
+      <img src={image.src} alt="Descripción de la imagen" class="-full h-auto opacity-0 animate-slide-up delay-200" style="pointer-events: none; user-select: none;" />
+    </div>
+  </div>
+  </main>
+  
+  <style>
+  /* Animación para que los elementos entren desde arriba */
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación para que los elementos entren desde abajo */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación para desvanecerse */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Aplicación de animaciones */
+  .animate-slide-down {
+    animation: slideDown 1s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  </style>
+  

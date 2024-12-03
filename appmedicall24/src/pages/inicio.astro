@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderStart from "../components/react/startPage/HeaderStart";
+---
+
+<Layout title="Bienvenidos a Medicall24">
+  <HeaderStart client:load />
+  <main class="flex items-start justify-center min-h-screen">
+    <div class="flex flex-col items-center mt-5">
+      <div>
+        <img
+          src="https://medicall24.com.co/wp-content/uploads/2024/11/Logom.png"
+          class="w-48 h-auto"
+          alt=""
+          style="pointer-events: none; user-select: none;"
+        />
+      </div>
+      <div>
+        <img
+          src="https://medicall24.com.co/wp-content/uploads/2024/11/Logom1.png"
+          class="mt-5 w-80 h-auto"
+          alt=""
+          style="pointer-events: none; user-select: none;"
+        />
+      </div>
+      <div>
+        <!-- <UserTypeSelector client:load /> -->
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  html {
+    background-image: url("https://medicall24.com.co/wp-content/uploads/2024/11/k1-scaled-1.jpg");
+    background-size: cover;
+    background-position-y: 130%;
+    overflow: hidden;
+  }
+
+  /* @media (max-width: 720px) {
+  html {
+    background-image: url('https://medicall24.com.co/wp-content/uploads/2024/11/AA7.png');
+    background-size: cover;
+    background-position: center;
+  }  } */
+</style>
