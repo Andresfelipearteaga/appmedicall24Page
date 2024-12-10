@@ -5,57 +5,75 @@ import incluye from '../../../assets/incluye.png'
 
 ---
 
-<main class="mt-6">
-    <div class="container mx-auto flex flex-row md:flex-row items-center justify-center gap-8">
-
-        <div class="w-full md:w-1/2 text-left md:text-left">
+<main>
+ 
+       <span class="container mx-auto flex">
+        <p class="text-5xl mb-10 text-gray-700 font-bold md:text-2xl md:text-center">Por la compra del plan el tomador podrá adquirir</p>
+    </span> 
+    <div class="container mx-auto flex flex-row md:flex-col items-center justify-center gap-8">
+        <div class="w-full md:w-2/2 text-left md:text-center">
             <div class="w-auto">      
-                <p class="font-bold text-pink-700 text-3xl mb-2 sm:text-2xl">Poliza de vida</p>
+                <p class="font-bold text-pink-700 text-3xl mb-0 sm:text-2xl">Póliza de vida</p>
             <div class="mb-8">
-                <p class="font-semibold text-gray-600 text-2xl mb-4 sm:text-xl">Amparos:</p>
+                <p class="font-semibold text-gray-600 text-lg mb-4 sm:text-lg">Por <span class="font-bold">$2,500 COP</span> mensuales</p>
+
+                <p class="text-gray-600 text-lg mb-4 sm:text-lg">Amparos:</p>
     
                 <!-- Amparo 1: Muerte por cualquier causa -->
-                <div class="flex items-center">
+                <div class="flex items-center md:text-left">
                     <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                     <p class="text-gray-600 font-semibold text-base">Muerte por cualquier causa</p>
                 </div>
     
                 <!-- Amparo 2: Incapacidad total y permanente por enfermedad o accidente -->
-                <div class="flex items-center">
+                <div class="flex items-center md:text-left">
                     <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                     <p class="text-gray-600 font-semibold text-base" >Incapacidad total y permanente por enfermedad o accidente</p>
                 </div>
     
                 <!-- Amparo 3: Enfermedades graves -->
-                <div class="flex items-center">
+                <div class="flex items-center md:text-left">
                     <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                     <p class="text-gray-600 font-semibold text-base">Enfermedades graves</p>
                 </div>
+                <a href="/Term&Cond" target="_blank">
+                    <button id="btn-term-2" class="font-BOLD text-gray-600 text-ls mb-2 mt-2 ml-4 sm:text-ls underline">Ver términos y condiciones</button>
+                </a>
+  
+
             </div>
     
-            <p class="font-bold text-pink-700 text-3xl mb-2 sm:text-2xl">Póliza de accidentes personales</p>
+            <p class="font-bold text-pink-700 text-3xl mb-0 sm:text-2xl">Póliza de accidentes personales</p>
+            <p class="font-semibold text-gray-600 text-lg mb-4 sm:text-lg">Por <span class="font-bold">$2,000 COP</span> mensuales</p>
+
     
-            <p class="font-semibold text-gray-600 text-2xl mb-4 sm:text-xl">Amparos:</p>
+            <p class="text-gray-600 text-lg mb-4 sm:text-lg">Amparos:</p>
     
             <!-- Amparo 4: Muerte accidental -->
-            <div class="flex items-center">
+            <div class="flex items-center md:text-left">
                 <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                 <p class="text-gray-600 font-semibold text-base">Muerte accidental</p>
             </div>
     
             <!-- Amparo 5: Invalidez accidental y/o desmembración -->
-            <div class="flex items-center">
+            <div class="flex items-center md:text-left">
                 <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                 <p class="text-gray-600 font-semibold text-base">Invalidez accidental y/o desmembración</p>
             </div>
     
             <!-- Amparo 6: Auxilio funerario -->
-            <div class="flex items-center">
+            <div class="flex items-center md:text-left">
                 <img src={icoLogo.src} alt="imagen" class="w-4 h-6 mr-3" />
                 <p class="text-gray-600 font-semibold text-base">Auxilio funerario</p>
             </div>
-                <img src={incluye.src} alt="valor poliza" class="w-8/12 mt-6">
-            </div>    </div>
+            <a href="/Term&Cond" target="_blank">
+                <button id="btn-term-1" class="text-gray-600 text-ls mb-2 mt-2 ml-4 sm:text-ls underline">Ver términos y condiciones</button>
+            </a>
+    
+            
+                <img src={incluye.src} alt="valor poliza" class="w-8/12 mt-6 md:w-full">
+            </div>    
+        </div>
         <div class="w-auto md:w-1/2">
             <img src={seguro.src} alt="mano" class="md:hidden w-96 h-auto">
         </div>

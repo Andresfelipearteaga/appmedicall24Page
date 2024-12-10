@@ -41,11 +41,11 @@ function HeaderStart() {
         {/* Opciones del menú (Desktop) */}
         <ul className="md:hidden flex items-center gap-14 text-md font-medium text-gray-600">
           {/* <li><img src={ico.src} alt="Logo" className=" select-none h-8 w-auto transform transition duration-200 hover:scale-105 flex" /></li> */}
-          <li><a href="https://medicall24.com.co/pacientes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold">Personas</a></li>
-          <li><a href="https://medicall24.com.co/profesionalesindependientes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold">Profesionales Independientes</a></li>
-          <li><a href="https://medicall24.com.co/instituciones-ips/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold">Instituciones IPS</a></li>
-          <li><a href="https://medicall24.com.co/entidades/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold">Entidades de Salud</a></li>
-          <li><a href="https://appmedicall24.com/planes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold">Planes Empresariales</a></li>
+          <li><a href="https://medicall24.com.co/pacientes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" target='_blank'>Personas</a></li>
+          <li><a href="https://medicall24.com.co/profesionalesindependientes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" target='_blank'>Profesionales Independientes</a></li>
+          <li><a href="https://medicall24.com.co/instituciones-ips/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" target='_blank'>Instituciones IPS</a></li>
+          <li><a href="https://medicall24.com.co/entidades/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" target='_blank'>Entidades de Salud</a></li>
+          <li><a href="https://appmedicall24.com/planes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" target='_blank'>Planes Empresariales</a></li>
         </ul>
       </div>
 
@@ -58,10 +58,10 @@ function HeaderStart() {
             menuOpen ? "opacity-100" : "opacity-0"
           }`}>
             <li><a href="https://medicall24.com.co/pacientes/" className="transform transition duration-200 hover:scale-105 flex hover:text-pink-600 hover:font-semibold" onClick={() => setMenuOpen(false)}>Personas</a></li>
-            <li><a href="https://medicall24.com.co/instituciones-ips/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Instituciones Ips</a></li>
             <li><a href="https://medicall24.com.co/profesionalesindependientes/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Profesionales Independientes</a></li>
+            <li><a href="https://medicall24.com.co/instituciones-ips/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Instituciones Ips</a></li>
             <li><a href="https://medicall24.com.co/entidades/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Entidades de Salud</a></li>
-            <li><a href="https://appmedicall24.com/planes/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Empresas</a></li>
+            <li><a href="https://appmedicall24.com/planes/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Planes Empresariales</a></li>
           </ul>
         </div>
 

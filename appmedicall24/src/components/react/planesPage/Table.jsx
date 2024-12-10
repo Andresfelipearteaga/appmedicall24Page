@@ -1,6 +1,6 @@
 import useGetValuePlan from '../../../hook/useGetValuePlan';
 import '../../../styles/styles.css';
-import icon from '../../../assets/camitem.png';
+import icon from '../../../assets/camitemverde.png';
 
 
 const items = [
@@ -28,8 +28,21 @@ const planValues = [
   { tope: 64000, valor: 19960 },
 ];
 
-const Table = () => {
+const Table = ( { onNext } ) => {
   const { tope, setTope, valorPlan, setValorPlan } = useGetValuePlan();
+
+  const handleNext = () => {
+    if (tope && valorPlan) {
+      onNext({ tope, valorPlan });
+    } else {
+      alert("Por favor completa todos los campos.");
+    }
+  };
+
+  // const handleSubmit = () => {
+  //   console.log(valorPlan);
+  //   onActivate(valorPlan);
+  // };
 
   // Función que actualiza el valor del plan según el tope de usuarios
 const handleTopeChange = (e) => {
@@ -93,12 +106,12 @@ const handleTopeChange = (e) => {
 
 <div className="p-6 md:p-12">
       {/* Título */}
-      <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-8 text-pink-600">
+      <h1 className="text-5xl md:text-xl font-bold text-center mb-8 text-pink-600">
         Plan de Telemedicina para 12 meses
       </h1>
 
       {/* 3 Items con imágenes */}
-      <ul className="flex space-x-12 mb-10 justify-center">
+      <ul className="flex space-x-4 mb-10 justify-center">
         {items.map(item => (
           <li className="flex flex-row items-center">
        
@@ -106,7 +119,7 @@ const handleTopeChange = (e) => {
               <img src={icon.src} alt="Descripción" class="w-full h-auto hover:scale-110 transition ease-in-out" />
             </div>
         
-            <p className="ml-2 text-xl text-gray-700 font-bold ">{item.text }</p>
+            <p className="ml-2 text-xl md:text-sm text-gray-700 font-bold ">{item.text }</p>
           </li>
         ))}
       </ul>
@@ -114,8 +127,8 @@ const handleTopeChange = (e) => {
 
 
       {/* Label pequeño y Input */}
-      <label className="block text-ls font-medium text-gray-500 mb-2 text-center">
-        Ingrese la cantidad de usuarios tomadores del plan
+      <label className="block text-ls md:text-sm font-medium text-gray-500 mb-2 text-center">
+        Ingresa la cantidad de usuarios tomadores del plan
       </label>
       <div className="flex flex-row justify-center items-center">
       <input
@@ -123,29 +136,35 @@ const handleTopeChange = (e) => {
         type="text"
         value={tope}
         onChange={handleTopeChange}
-        className="custom-input w-4/10 self-center p-2 text-gray-600 font-bold placeholder-gray-400 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-orange-500 mb-6"
+        className="custom-input w-4/10 self-center p-2 text-gray-600 font-bold placeholder-gray-400 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-orange-500 mb-0"
         placeholder="Cantidad de tomadores"
       />
       </div>
-        
+  
+      {/* Tabla de precios */}
+      <div class="flex items-center justify-center w-full">
+      <button id="open-dialog-btn" class="plan-btn bg-transparent font-bold text-pink-600 px-4 py-2 rounded-lg text-underline mb-4 hover:scale-110 transition ease-in-out transform">
+        Ver escala de precios
+      </button>
+      
+    </div>
       {/* Descripción */}
-      <p className="text-center text-xl font-bold mb-4 text-gray-700 mb-4">Valor del mes para cada usuario tomador</p>
+      <p className="text-center text-xl md:text-base font-bold mb-4 text-gray-700 mb-4">Valor del mes para cada usuario tomador</p>
 
 
       {/* Label grande */}
-      <label className="block text-center text-6xl font-bold text-gray-700 mb-6 hover:text-pink-600 transition ease-in-out">
+      <label className="block text-center text-6xl md:text-4xl font-bold text-gray-700 mb-6 hover:text-pink-600 transition ease-in-out">
          {valorPlan !== "" ? `$ ${valorPlan.toLocaleString("en-US")}` : "$0"}
       </label>
-   <div className="flex flex-row md:flex-row justify-between items-center gap-4 mt-6">
-   </div>
+
       {/* 3 Inputs en línea horizontal */}
-      <div className="flex flex-row md:flex-row justify-between items-start md:items-center gap-4 mt-6">
+      <div className="flex flex-row md:flex-col justify-between items-start md:items-center gap-4 mt-6">
   {[
     { label: "Descuento", value: `${discount}%`, symbol: "%" },
-    { label: "Valor Mensual", value: `$${valueMonthly.toLocaleString("en-US")}`, symbol: "$" },
-    { label: "Valor Anual", value: `$${valueAnnually.toLocaleString("en-US")}`, symbol: "$" },
+    { label: "Valor mensual del plan", value: `$${valueMonthly.toLocaleString("en-US")}`, symbol: "$" },
+    { label: "Valor anual del plan", value: `$${valueAnnually.toLocaleString("en-US")}`, symbol: "$" },
   ].map((item, index) => (
-    <div key={index} className="flex flex-col items-start w-full md:w-auto">
+    <div key={index} className="flex flex-col items-start md:items-center w-full">
       {/* Texto alineado con su input */}
       <label className="text-sm font-semibold text-gray-600 mb-2">{item.label}</label>
       <div className="flex items-center w-full">
@@ -155,7 +174,7 @@ const handleTopeChange = (e) => {
           disabled
           type="text"
           value={item.value}
-          className="w-full md:w-28 text-gray-600 font-bold p-2 border-x-0 border-t-0 border-gray-400 focus:outline-none"
+          className="w-full text-gray-600 font-bold p-2 border-x-0 border-t-0 border-gray-400 focus:outline-none"
           placeholder={item.value}
         />
       </div>
@@ -163,11 +182,16 @@ const handleTopeChange = (e) => {
   ))}
   
 </div>
+<div className='flex items-center justify-center'>
 <button 
-  className='plan-btn bg-orange-500 hover:bg-orange-500 hover:scale-110 transition duration-300 text-white font-bold py-2 px-6 border-b-4 border-orange-500 hover:border-orange-400 rounded-3xl cursor-pointer w-5/12 mt-10 mr-10 w-auto'
-  >
-  Obtener Cotización
+  className={`bg-orange-500 text-white font-bold py-2 px-6 border-b-4 border-orange-500 rounded-3xl w-5/12 mt-10 w-auto ${tope.trim() === "" ? 'opacity-50' : 'hover:bg-orange-500 hover:scale-110 transition duration-300 hover:border-orange-400 cursor-pointer'}`}
+  disabled={tope.trim() === ""}
+  onClick={handleNext}>
+  Solicitar Cotización
 </button>
+</div>
+
+
     </div>
 
     

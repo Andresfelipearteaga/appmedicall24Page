@@ -1,11 +1,11 @@
 ---
-import icon from '../../../assets/camitem.png';
+import icon from '../../../assets/camitemverde.png';
 import paciente from '../../../assets/paciente.webp';
 import Simulated from './Simulated.astro';
 import ButtonModal from './ButtomModal.astro';
 
 const title1 = "Consultas";
-const title2 = "Ilimitadas";
+const title2 = "ilimitadas";
 
 
 const items = [
@@ -16,16 +16,18 @@ const items = [
 ---
 
 
-<div class="container mx-auto flex flex-row md:flex-row items-center justify-center gap-8">
-  <div class="w-6/12 md:w-1/2 rounded-3xl overflow-hidden">
+<div class="container mx-auto flex flex-row md:flex-col items-center justify-center gap-8">
+  <div class="w-6/12 md:w-2/2 rounded-3xl overflow-hidden">
     <img src={paciente.src} alt="image" class="w-full h-auto transition-transform transform scale-100 hover:scale-110 hover:rotate-1 hover:translate-y-[-5px] duration-300" />
   </div>
-  <div class="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center items-center">
-    <div class="text-center items-center mb-4">
-      <span class="text-4xl font-bold text-gray-600">{title1}</span> 
-      <span class="text-4xl font-extrabold text-pink-600">{title2}</span>
+  <div class="w-full md:w-2/2 text-left md:text-center flex flex-col justify-center items-center">
+    <span class="text-5xl md:text-2xl font-bold text-gray-700 mt-10 mb-6 ml-16 md:ml-0">Plan de Telemedicina para 12 meses</span>
 
-      <ul class="flex gap-14 mt-8 mb-8 items-center justify-center">
+    <div class="text-center items-center mb-0">
+      <!-- <span class="text-lg font-semibold text-gray-700">{title1}</span> 
+      <span class="text-lg font-bold text-pink-600">{title2} <span class="text-xl font-semibold text-gray-700">por:</span></span> -->
+
+      <ul class="flex gap-14 md:gap-2 mt-2 mb-8 items-center justify-center">
         {items.map(item => (
           <li class="flex flex-row items-center">
             <!-- Ícono -->
@@ -33,23 +35,23 @@ const items = [
               <img src={icon.src} alt="Descripción" class="w-full h-auto" />
             </div>
             <!-- Texto -->
-            <p class="ml-2 text-base text-gray-700 font-bold">{item.text }</p>
+            <p class="ml-2 text-base md:text-sm text-gray-700 font-semibold">{item.text }</p>
           </li>
         ))}
       </ul>
 
     </div>
 
-      <div class="w-10/12 rounded-lg overflow-hidden mb-12">
+      <div class="w-10/12 rounded-lg overflow-hidden mb-6 md:w-full">
         <table class="w-full bg-white">
           <thead class="bg-orange-500 text-white">
             <tr>
-              <th class="px-4 py-3 text-center font-bold text-base">Precio del Plan de Telemedicina para el usuario tomador</th>
+              <th class="px-4 md:px-0 py-3 text-center font-bold text-base md:text-sm">Valor mensual del plan para el usuario tomador</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-200">
               <tr class="hover:bg-gray-50 bg-gray-100 transition-colors duration-200">
-                <th class="px-4 py-3 text-base text-center font-bold text-gray-600"><span class="text-sm font-bold text-pink-600">Desde</span> $19,960 COP</th>
+                <th class="px-4 py-3 text-base md:text-xs text-center font-bold text-gray-600"><span class="text-sm font-bold text-pink-600">Desde</span> $19,960 COP</th>
               </tr>
           </tbody>
         </table>
@@ -57,58 +59,65 @@ const items = [
       </div>
 
       <div class="w-10/12 rounded-lg overflow-hidden">
-        <p class="text-center text-base font-bold mb-4 text-gray-700 mb-4">El tomador del plan puede registrar 3 usuarios adicionales accediendo a tarifas preferenciales</p> 
+        <p class="text-left text-base md:text-sm font-medium mb-4 text-gray-700 mb-4">El tomador del plan puede registrar 3 usuarios adicionales con tarifas preferenciales</p> 
         <table class="w-full border-collapse bg-white shadow-lg">
             <!-- Cuerpo -->
             <tbody class="divide-y divide-gray-200">
               <tr class="bg-gray-100 hover:bg-gray-50 transition-colors duration-200">
-                <td class="px-4 border-r border-gray-200 py-3 text-base text-center font-regular text-gray-700">
-                  Segundo Usuario
+                <td class="px-4 border-r border-gray-200 py-3 text-base md:text-xs text-center font-regular text-gray-700">
+                  Segundo usuario
                 </td>
-                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
-                    <span class="text-sm font-bold text-pink-600">Desde</span> $6,000 COP
+                <td class="px-4 py-3 border-r border-gray-200 text-base md:text-sm text-center font-bold text-gray-700">
+                    <span class="text-sm md:text-xs font-bold text-pink-600">Desde</span> $6,000 COP
                 </td>
-                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
-                  Descuento del <span class="font-bold">70%</span>
+                <td class="px-4 py-3 text-base md:text-xs text-center font-medium text-gray-700">
+                  Descuento <span class="font-bold">70%</span>
                 </td>
               </tr>
               <tr class="transition-colors duration-200">
-                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-regular text-gray-700">
-                Tercer Usuario
+                <td class="px-4 py-3 border-r border-gray-200 text-base md:text-xs text-center font-regular text-gray-700">
+                Tercer usuario
                 </td>
-                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
-                    <span class="text-sm font-bold text-pink-600">Desde</span> $4,000 COP
+                <td class="px-4 py-3 border-r border-gray-200 text-base md:text-sm text-center font-bold text-gray-700">
+                    <span class="text-sm md:text-xs font-bold text-pink-600">Desde</span> $4,000 COP
 
                 </td>
-                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
-                    Descuento del <span class="font-bold">80%</span>
+                <td class="px-4 py-3 text-base md:text-xs text-center font-medium text-gray-700">
+                    Descuento <span class="font-bold">80%</span>
                 </td>
               </tr>
               <tr class="bg-gray-100 hover:bg-gray-50 transition-colors duration-200">
-                <td class="px-4 border-r border-gray-200 py-3 text-base text-center font-regular text-gray-700">
-                Cuarto Usuario
+                <td class="px-4 border-r border-gray-200 py-3 text-base md:text-xs text-center font-regular text-gray-700">
+                Cuarto usuario
                 </td>
-                <td class="px-4 py-3 border-r border-gray-200 text-base text-center font-bold text-gray-700">
+                <td class="px-4 py-3 border-r border-gray-200 text-base md:text-xs text-center font-bold text-gray-700">
                     <span class="text-sm font-bold text-pink-600">Desde</span> $2,000 COP
                 </td>
-                <td class="px-4 py-3 text-base text-center font-medium text-gray-700">
-                Descuento del <span class="font-bold">90%</span>
+                <td class="px-4 py-3 text-base md:text-xs text-center font-medium text-gray-700">
+                Descuento <span class="font-bold">90%</span>
                 </td>
               </tr>
             </tbody>
           </table>
+          <p class="text-left text-xs md:text-xs font-medium text-gray-700 mt-6">
+            Valor total del plan al mes por los 4 usuarios: <span class="font-bold text-gray-700">$31,960 COP</span> |      Valor promedio por usuario al mes: <span class="font-bold text-gray-700">$7,990 COP</span>
+          </p>
+          <div class="flex flex-row justify-center">
+            <a href="/Term&Cond" target="_blank" class="text-center">
+              <button id="btn-term-1" class="text-base md:text-sm font-medium text-gray-700 mt-2 underline">
+                Ver términos y condiciones
+                </button>
+            </a>
+          </div>
+
+
+
       </div>
-      <ButtonModal label="Simular" className="w-auto" dataTarget="hidden-section-2" />
+      <!-- <span class="mt-8 text-xl font-medium text-gray-700 text-center description">Utilice el simulador y arme un plan para sus trabajadores</span>
+      <ButtonModal label="Simulador" className="w-auto plan-btn" dataTarget="hidden-section-2" /> -->
     </div>
   </div>
 </div>
-</div>
-</div>
-<div
-id="hidden-section-2"
-class="mt-6 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-<div class="p-4">
-  <Simulated />
 </div>
 </div>
 

@@ -1,17 +1,22 @@
 ---
-import logo from '../../../assets/lettermarkgray.png';
+import logo from '../../../assets/lettermarkoriginal.png';
 ---
 
 <header class="bg-transparent text-white">
-  <div class="container flex items-center justify-between py-4 px-24 sm:px-10">
+  <div class="container mx-auto flex items-center justify-between py-4 px-16 sm:px-10">
     <!-- Logo -->
     <a href="/" class="filter">
       <img src={logo.src} alt="Logo" class="h-8 w-auto sm:w-36 sm:h-auto" />
     </a>
-    <!-- Tipo de Usuario -->
+   
     <div class="text-sm font-medium flex flex-row items-center sm:flex-col">
-        <a href="https://appmedicall24.com/inicio/" class="text-gray-400 font-medium text-xl hover:text-pink-600 hover:text-xl hover:font-bold transition ease-in-out">Inicio</a>
-
+        <a href="https://appmedicall24.com/inicio/" class="text-gray-400 font-medium text-xl hover:text-pink-600 hover:text-xl hover:font-bold transition ease-in-out">
+        <button 
+        class=`bg-orange-500 hover:bg-orange-500 hover:scale-110 transition duration-300 text-white font-bold py-2 px-6 border-b-4 border-orange-500 hover:border-orange-400 rounded-3xl cursor-pointer auto`
+        >
+          Inicio
+        </button>
+        </a>
     </div>
   </div>
 </header>

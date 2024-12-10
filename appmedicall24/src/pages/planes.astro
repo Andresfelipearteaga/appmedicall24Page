@@ -5,39 +5,42 @@ import GetPlan from "../components/astro/planesPage/getPlan.astro";
 import ViewIndex from "../components/astro/planesPage/ViewIndex.astro";
 import InfoText from "../components/astro/planesPage/InfoText.astro";
 import HeaderPlan from "../components/astro/planesPage/HeaderPlanes.astro";
-import Simulated from "../components/astro/planesPage/Simulated.astro";
+import ViewSimulatedSection from "../components/react/planesPage/ViewSimulatedSection.jsx";
+import ModalGetPlan from "../components/astro/planesPage/ModalGetPlan.astro";
+// import SimulatedSection from "../components/astro/planesPage/Simulated.astro";
+// import DesignBox from "../components/astro/planesPage/DesignBox.astro";
 ---
 
 <main>
   <Layout title="Inicio - Planes Empresariales">
     <HeaderPlan />
     <section
-      class="bg-gradient-to-r from-pink-700 to-pink-500 py-16 px-48 md:px-12"
-    >
-    
+      class="bg-gray-200 py-24 h-full px-24 md:px-4">
       <ViewIndex />
     </section>
-
-    <section class="py-12 px-48 md:px-12">
-        <div
-        id="hidden-section-1"
-        class="mt-6 mb-6 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-        <div class="p-4 bg-white">
-            <Simulated />
-        </div>
-      </div>
+    <section class="py-12 px-24 md:px-4">
       <InfoText />
     </section>
-    <section class="py-12 px-48 md:px-12">
+    <section id="planes" class="py-12 px-24 md:px-4">
       <InfoPlan />
     </section>
-    <section class="py-12 px-48 md:px-12">
+    <section class="py-12 md:px-4">
+      <ViewSimulatedSection client:load />
+    </section>
+    <section class="py-2 px-24 md:px-4">
         <GetPlan />
     </section>
+    <ModalGetPlan />
   </Layout>
 </main>
 
 <style>
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
   .animate-slide-in {
     animation: slide-in 1s ease-out;
   }
@@ -74,5 +77,10 @@ import Simulated from "../components/astro/planesPage/Simulated.astro";
     100% {
       transform: translateY(0); /* El contenido vuelve a su posición original */
     }
+  }
+
+  .bg-simulated {
+    
+
   }
 </style>
